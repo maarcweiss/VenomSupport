@@ -24,22 +24,22 @@ ENDS
 CTOS
 LDMSGADDR
 ENDS
-.loc ../contracts/Tokensale.tsol, 25
+.loc ../contracts/TokenSale/Tokensale.tsol, 25
 ACCEPT
-.loc ../contracts/Tokensale.tsol, 26
+.loc ../contracts/TokenSale/Tokensale.tsol, 26
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Tokensale.tsol, 27
+.loc ../contracts/TokenSale/Tokensale.tsol, 27
 PUSH S3
 SETGLOB 12
-.loc ../contracts/Tokensale.tsol, 28
+.loc ../contracts/TokenSale/Tokensale.tsol, 28
 SWAP
 SETGLOB 15
-.loc ../contracts/Tokensale.tsol, 29
+.loc ../contracts/TokenSale/Tokensale.tsol, 29
 SWAP
 SETGLOB 14
-.loc ../contracts/Tokensale.tsol, 32
+.loc ../contracts/TokenSale/Tokensale.tsol, 32
 PUSHINT 100000000
 MYADDR
 ROLL 3
@@ -58,7 +58,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Tokensale.tsol, 41
+.loc ../contracts/TokenSale/Tokensale.tsol, 41
 NEWC
 STSLICECONST x42_
 STSLICE
@@ -67,7 +67,7 @@ STZEROES
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/Tokensale.tsol, 0
+.loc ../contracts/TokenSale/Tokensale.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -82,7 +82,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Tokensale.tsol, 44
+.loc ../contracts/TokenSale/Tokensale.tsol, 44
 OVER
 PUSHCONT {
 	LDREF
@@ -92,7 +92,7 @@ PUSHCONT {
 IF
 LDMSGADDR
 ENDS
-.loc ../contracts/Tokensale.tsol, 0
+.loc ../contracts/TokenSale/Tokensale.tsol, 0
 CALLREF {
 	CALL $onTokenWallet_e6d1bd58_internal_macro$
 }
@@ -103,7 +103,7 @@ CALLREF {
 THROW 0
 
 .macro onTokenWallet_e6d1bd58_internal_macro
-.loc ../contracts/Tokensale.tsol, 45
+.loc ../contracts/TokenSale/Tokensale.tsol, 45
 GETGLOB 9
 PARSEMSGADDR
 INDEX 3
@@ -114,13 +114,13 @@ GETGLOB 12
 SDEQ
 AND
 THROWIFNOT 101
-.loc ../contracts/Tokensale.tsol, 50
+.loc ../contracts/TokenSale/Tokensale.tsol, 50
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Tokensale.tsol, 51
+.loc ../contracts/TokenSale/Tokensale.tsol, 51
 SETGLOB 13
-.loc ../contracts/Tokensale.tsol, 52
+.loc ../contracts/TokenSale/Tokensale.tsol, 52
 GETGLOB 11
 NEWC
 STSLICECONST x42_
@@ -130,7 +130,7 @@ STZEROES
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/Tokensale.tsol, 0
+.loc ../contracts/TokenSale/Tokensale.tsol, 0
 
 .macro buyTokens
 DROP
@@ -141,7 +141,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Tokensale.tsol, 55
+.loc ../contracts/TokenSale/Tokensale.tsol, 55
 OVER
 PUSHCONT {
 	LDREF
@@ -151,7 +151,7 @@ PUSHCONT {
 IF
 LDU 128
 ENDS
-.loc ../contracts/Tokensale.tsol, 0
+.loc ../contracts/TokenSale/Tokensale.tsol, 0
 CALLREF {
 	CALL $buyTokens_0ced5b02_internal_macro$
 }
@@ -161,11 +161,11 @@ IFREF {
 THROW 0
 
 .macro buyTokens_0ced5b02_internal_macro
-.loc ../contracts/Tokensale.tsol, 56
+.loc ../contracts/TokenSale/Tokensale.tsol, 56
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Tokensale.tsol, 58
+.loc ../contracts/TokenSale/Tokensale.tsol, 58
 DUP
 DEPTH
 ADDCONST -2
@@ -175,7 +175,7 @@ ADD
 UFITS 128
 GREATER
 PUSHCONT {
-	.loc ../contracts/Tokensale.tsol, 59
+	.loc ../contracts/TokenSale/Tokensale.tsol, 59
 	GETGLOB 9
 	NEWC
 	STSLICECONST x42_
@@ -187,17 +187,17 @@ PUSHCONT {
 	SENDRAWMSG
 }
 PUSHCONT {
-	.loc ../contracts/Tokensale.tsol, 61
+	.loc ../contracts/TokenSale/Tokensale.tsol, 61
 	GETGLOB 15
 	OVER
 	MUL
 	UFITS 128
-	.loc ../contracts/Tokensale.tsol, 62
+	.loc ../contracts/TokenSale/Tokensale.tsol, 62
 	DUP
 	GETGLOB 14
 	GREATER
 	PUSHCONT {
-		.loc ../contracts/Tokensale.tsol, 63
+		.loc ../contracts/TokenSale/Tokensale.tsol, 63
 		GETGLOB 9
 		NEWC
 		STSLICECONST x42_
@@ -206,10 +206,10 @@ PUSHCONT {
 		STZEROES
 	}
 	PUSHCONT {
-		.loc ../contracts/Tokensale.tsol, 65
+		.loc ../contracts/TokenSale/Tokensale.tsol, 65
 		PUSHREF {
 		}
-		.loc ../contracts/Tokensale.tsol, 67
+		.loc ../contracts/TokenSale/Tokensale.tsol, 67
 		FALSE
 		GETGLOB 9
 		PUSHINT 100000000
@@ -239,11 +239,11 @@ PUSHCONT {
 	ENDC
 	PUSHPOW2 7
 	SENDRAWMSG
-	.loc ../contracts/Tokensale.tsol, 0
+	.loc ../contracts/TokenSale/Tokensale.tsol, 0
 	DROP
 }
 IFELSE
-.loc ../contracts/Tokensale.tsol, 0
+.loc ../contracts/TokenSale/Tokensale.tsol, 0
 DROP
 
 .macro c4_to_c7

@@ -1,5 +1,6 @@
 import { Address, Contract, Giver, ProviderRpcClient, Transaction } from "locklift";
 import { Ed25519KeyPair } from "everscale-standalone-client";
+import { WalletTypes } from "locklift";
 
 // Reimplements this class if you need to use custom giver contract
 export class SimpleGiver implements Giver {
@@ -101,3 +102,25 @@ const giverWallet = {
   ],
   events: [],
 } as const;
+
+export class EverWallet implements Giver {
+  public address: Address;
+
+  constructor(public ever: ProviderRpcClient, readonly keyPair: Ed25519KeyPair, address: string) {
+    this.address = new Address(address);
+  }
+
+  public async sendTo(sendTo: Address, value: string): Promise<{ transaction: Transaction; output?: {} }> {
+    const sender = await locklift.factory.accounts.addExistingAccount({
+      type: WalletTypes.EverWallet,
+      address: this.address,
+    });
+
+    return this.ever.sendMessage({
+      sender: sender.address,
+      recipient: sendTo,
+      amount: value,
+      bounce: false,
+    });
+  }
+}

@@ -1,6 +1,6 @@
 import { LockliftConfig } from "locklift";
 import { FactorySource } from "./build/factorySource";
-import { SimpleGiver, GiverWallet } from "./giverSettings";
+import { SimpleGiver, GiverWallet, EverWallet } from "./giverSettings";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -33,6 +33,7 @@ const config: LockliftConfig = {
     // }
     externalContracts: {
       "node_modules/tip3/build": ["TokenRoot", "TokenWallet"],
+      precompiled: ["Index", "IndexBasis"],
       // "node_modules/broxus-ton-tokens-contracts/build": ["TokenRoot", "TokenWallet"],
     },
   },
@@ -112,9 +113,16 @@ const config: LockliftConfig = {
       },
 
       // This giver is default Wallet
+      // giver: {
+      //   // Check if you need provide custom giver
+      //   giverFactory: (ever, keyPair, address) => new GiverWallet(ever, keyPair, address),
+      //   address: "0:b67cebc6579c98b283e33cbbd07d7e88fab023e1f52e2f2d62c2cc9c9321def8",
+      //   phrase: SEED,
+      //   accountId: 0,
+      // },
       giver: {
         // Check if you need provide custom giver
-        giverFactory: (ever, keyPair, address) => new GiverWallet(ever, keyPair, address),
+        giverFactory: (ever, keyPair, address) => new EverWallet(ever, keyPair, address),
         address: "0:b67cebc6579c98b283e33cbbd07d7e88fab023e1f52e2f2d62c2cc9c9321def8",
         phrase: SEED,
         accountId: 0,
